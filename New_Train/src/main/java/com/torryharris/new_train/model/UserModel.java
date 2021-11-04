@@ -1,9 +1,6 @@
 package com.torryharris.new_train.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,10 +9,11 @@ import javax.persistence.Id;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
 public class UserModel {
     @Id
     private String userName;
-    private String password,reEnterPassword;
+    private String password,confirmPassword;
 }
 

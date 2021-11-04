@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Register</title>
     <link type="text/css" rel="stylesheet" href="Registration.css"/>
+
 </head>
 <body>
 
 <marquee>This is to Register</marquee>
-<form action="login">
+<form action="add" onsubmit="return pass()">
+
     <br>
     <br>
     <br>
@@ -18,22 +20,29 @@
     <table>
 
         <tr><td><label> <b>Username:</b></label></td><td><input type="text"  name="userName" placeholder="UserName"></td></tr>
-        <tr><td><label><b>Password:</b></label></td><td><input type="password" name="password" placeholder="**********"></td></tr>
-        <tr><td><label><b>Re Enter-Password:</b></label></td><td><input type="password" name="reEnterPassword" placeholder="*********"></td></tr>
+        <tr><td><label><b>Password:</b></label></td><td><input type="password" name="password" placeholder="**********" id="word"></td></tr>
+        <tr><td><label><b>Comfirm-Password:</b></label></td><td><input type="password" name="confirmPassword" placeholder="*********" id="word1"></td></tr>
         <tr><td><input id="css" type="submit" value="Submit"></td></tr>
     </table>
    </center>
 </form>
-
-<!--    form action="Login.html">-->
-<!--        <button onsubmit="goBack()">Go Back</button>-->
-<!--    </form>-->
-
-<!--<script>-->
-<!--    function goBack() {-->
-<!--        window.history.back();-->
-<!--    }-->
-<!--</script>-->
-
+<form action="get">
+    <center>
+        <table>
+            <tr><td> <label><b>UserName:</b></label> <input type="text" name="userName"placeholder="UserName"></tr></td>
+            <tr><td><input id="cas" type="submit" value="Submit"></tr></td>
+        </table>
+    </center>
+</form>
+<script>
+    function pass(){
+        var p=document.getElementById("word").value;
+        var w=document.getElementById("word1").value;
+        if(p!=w){
+            alert("password not matched, Re-enter the password");
+            return false;
+        }
+    }
+</script>
 </body>
 </html>
